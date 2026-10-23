@@ -1,0 +1,48 @@
+INSERT INTO courses (name, duration_months) VALUES
+  ('B.Sc Computer Science', 36),
+  ('B.Com', 36),
+  ('B.A English', 36),
+  ('BBA', 24),
+  ('Diploma in Civil Engineering', 18)
+  ON DUPLICATE KEY UPDATE name = VALUES(name), duration_months = VALUES(duration_months);
+
+INSERT INTO students (roll_no, name, email, phone, dob, gender, address, course_id, created_at) VALUES
+  ('CS101', 'Aarav Sharma', 'aarav.sharma@example.com', '9876543210', '2004-07-12', 'Male', '12, Green Park, Delhi', 1, '2024-01-10 09:15:00'),
+  ('CS102', 'Ishita Verma', 'ishita.verma@example.com', '9812345678', '2003-11-05', 'Female', '88, Sector 15, Noida', 1, '2024-02-14 10:20:00'),
+  ('CS103', 'Rohan Mehta', 'rohan.mehta@example.com', '9988776655', '2002-08-30', 'Male', '45, Lotus Homes, Jaipur', 1, '2024-03-08 12:00:00'),
+  ('CS104', 'Ananya Nair', 'ananya.nair@example.com', '9654321987', '2005-01-22', 'Female', '71, Lakeview Road, Kochi', 1, '2024-04-02 08:40:00'),
+  ('CS105', 'Kabir Singh', 'kabir.singh@example.com', '9765432109', '2004-03-18', 'Male', '9, Gulmohar Avenue, Pune', 1, '2024-05-18 16:05:00'),
+  ('BC201', 'Meera Joshi', 'meera.joshi@example.com', '9345123456', '2004-02-10', 'Female', '31, Ashok Vihar, Ahmedabad', 2, '2024-01-12 07:30:00'),
+  ('BC202', 'Aditya Iyer', 'aditya.iyer@example.com', '9123456780', '2003-09-27', 'Male', '54, Mylapore, Chennai', 2, '2024-01-26 11:45:00'),
+  ('BC203', 'Saanvi Kapoor', 'saanvi.kapoor@example.com', '9898989898', '2005-05-08', 'Female', '22, Gulshan Colony, Lucknow', 2, '2024-02-18 13:15:00'),
+  ('BC204', 'Vihaan Patil', 'vihaan.patil@example.com', '9876501234', '2004-12-03', 'Male', '7, Banjara Hills, Hyderabad', 2, '2024-03-13 09:10:00'),
+  ('BC205', 'Naina Shah', 'naina.shah@example.com', '9000012345', '2002-10-15', 'Female', '11, Manek Chowk, Mumbai', 2, '2024-04-09 15:00:00'),
+  ('BA301', 'Yash Gupta', 'yash.gupta@example.com', '9321567890', '2003-06-19', 'Male', '17, Civil Lines, Kanpur', 3, '2024-01-22 10:55:00'),
+  ('BA302', 'Diya Reddy', 'diya.reddy@example.com', '9865432101', '2004-04-27', 'Female', '5, Dwaraka, Hyderabad', 3, '2024-02-07 14:10:00'),
+  ('BA303', 'Arjun Malhotra', 'arjun.malhotra@example.com', '9871234567', '2002-07-16', 'Male', '102, Sushant Lok, Gurgaon', 3, '2024-02-28 08:20:00'),
+  ('BA304', 'Pooja Das', 'pooja.das@example.com', '9811100001', '2005-08-01', 'Female', '30, Nandini Layout, Bengaluru', 3, '2024-03-15 12:30:00'),
+  ('BA305', 'Karan Rao', 'karan.rao@example.com', '9445566778', '2004-11-11', 'Male', '44, Anand Nagar, Vijayawada', 3, '2024-05-07 09:50:00'),
+  ('BB401', 'Zoya Khan', 'zoya.khan@example.com', '9786543210', '2003-03-12', 'Female', '18, Raj Nagar, Nagpur', 4, '2024-01-18 10:05:00'),
+  ('BB402', 'Harsh Bansal', 'harsh.bansal@example.com', '9900123456', '2002-12-09', 'Male', '66, J block, Ghaziabad', 4, '2024-02-25 16:40:00'),
+  ('BB403', 'Prerna Sethi', 'prerna.sethi@example.com', '9340098765', '2004-09-02', 'Female', '72, Sapru Marg, Lucknow', 4, '2024-03-28 11:35:00'),
+  ('BB404', 'Ritik Chawla', 'ritik.chawla@example.com', '9899501234', '2005-01-14', 'Male', '13, Ring Road, Chandigarh', 4, '2024-04-19 14:55:00'),
+  ('BB405', 'Neha Menon', 'neha.menon@example.com', '9134567890', '2003-10-20', 'Female', '25, Kaloor, Kochi', 4, '2024-05-01 15:25:00'),
+  ('DE501', 'Tanishq Arora', 'tanishq.arora@example.com', '9556677889', '2002-06-28', 'Male', '2, Khanna Market, Delhi', 5, '2024-01-15 09:40:00'),
+  ('DE502', 'Sanvi Kulkarni', 'sanvi.kulkarni@example.com', '9123987654', '2004-01-11', 'Female', '49, Viman Nagar, Pune', 5, '2024-02-03 10:10:00'),
+  ('DE503', 'Dev Patel', 'dev.patel@example.com', '9765432101', '2003-07-05', 'Male', '27, Rajpath Lane, Ahmedabad', 5, '2024-02-12 13:45:00'),
+  ('DE504', 'Sara Ali', 'sara.ali@example.com', '9988771122', '2002-05-24', 'Female', '14, Sadar Bazaar, Jaipur', 5, '2024-03-21 08:15:00'),
+  ('DE505', 'Mohit Rathi', 'mohit.rathi@example.com', '9009876543', '2005-02-17', 'Male', '76, Kalyan Nagar, Bengaluru', 5, '2024-04-27 12:55:00'),
+  ('CS106', 'Rhea Mishra', 'rhea.mishra@example.com', '9345678901', '2004-08-14', 'Female', '8, Sector 62, Noida', 1, '2024-05-29 09:30:00'),
+  ('BC206', 'Aman Chopra', 'aman.chopra@example.com', '9876543211', '2005-06-22', 'Male', '62, Rani Bagh, Delhi', 2, '2024-05-12 11:25:00'),
+  ('BA306', 'Lavanya Sinha', 'lavanya.sinha@example.com', '9988776654', '2003-04-09', 'Female', '18, Huda City Centre, Gurgaon', 3, '2024-05-26 15:20:00'),
+  ('BB406', 'Kunal Nanda', 'kunal.nanda@example.com', '9800001122', '2004-07-03', 'Male', '48, Sector 24, Chandigarh', 4, '2024-04-30 09:45:00'),
+  ('DE506', 'Nikita Joshi', 'nikita.joshi@example.com', '9761234567', '2005-02-28', 'Female', '90, Baner, Pune', 5, '2024-05-10 07:50:00')
+ON DUPLICATE KEY UPDATE
+  roll_no = VALUES(roll_no),
+  name = VALUES(name),
+  email = VALUES(email),
+  phone = VALUES(phone),
+  dob = VALUES(dob),
+  gender = VALUES(gender),
+  address = VALUES(address),
+  course_id = VALUES(course_id);

@@ -1,0 +1,49 @@
+@baseUrl = http://localhost:3000
+
+### Health
+GET {{baseUrl}}/api/health
+
+### Courses
+GET {{baseUrl}}/api/courses
+
+### Students list
+GET {{baseUrl}}/api/students?search=sharma&course=1&sort=name&order=asc&page=1&limit=10
+
+### Student by id
+GET {{baseUrl}}/api/students/1
+
+### Create student
+POST {{baseUrl}}/api/students
+Content-Type: application/json
+
+{
+  "roll_no": "CS999",
+  "name": "Test Student",
+  "email": "test.student@example.com",
+  "phone": "9876543210",
+  "dob": "2005-01-01",
+  "gender": "Female",
+  "address": "Some address",
+  "course_id": 1
+}
+
+### Update student
+PUT {{baseUrl}}/api/students/1
+Content-Type: application/json
+
+{
+  "roll_no": "CS101",
+  "name": "Updated Name",
+  "email": "updated.student@example.com",
+  "phone": "9876543210",
+  "dob": "2004-07-12",
+  "gender": "Male",
+  "address": "Updated street",
+  "course_id": 2
+}
+
+### Delete student
+DELETE {{baseUrl}}/api/students/1
+
+### Restore student
+POST {{baseUrl}}/api/students/1/restore

@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+DEV_LOG.md
+INTERVIEW_NOTES.md
+uploads/*
+!uploads/.gitkeep
+.mysqltestdata/
+coverage/
+.DS_Store
+npm-debug.log*

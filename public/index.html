@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <h1>Student Management System</h1>
+        <nav>
+          <span id="userBadge">Not signed in</span>
+          <button id="loginLink" class="secondary">Login</button>
+          <button id="logoutBtn" class="secondary hidden">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="stats" class="stats-grid"></section>
+
+      <section class="toolbar">
+        <input id="searchInput" type="search" placeholder="Search students" />
+        <select id="courseFilter">
+          <option value="">All courses</option>
+        </select>
+        <select id="sortField">
+          <option value="created_at">Sort by created date</option>
+          <option value="name">Name</option>
+          <option value="email">Email</option>
+          <option value="roll_no">Roll number</option>
+          <option value="course_name">Course</option>
+        </select>
+        <select id="sortOrder">
+          <option value="desc">Descending</option>
+          <option value="asc">Ascending</option>
+        </select>
+        <button id="addStudentBtn" class="primary hidden">Add Student</button>
+        <button id="exportBtn" class="secondary hidden">Export CSV</button>
+      </section>
+
+      <section class="table-wrap" aria-label="Students">
+        <table>
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Roll</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Created</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+      </section>
+
+      <div class="pagination">
+        <button id="prevPage">Prev</button>
+        <span id="pageLabel">Page 1 of 1</span>
+        <button id="nextPage">Next</button>
+      </div>
+    </main>
+
+    <dialog id="studentDialog" class="student-dialog">
+      <form id="studentForm" class="student-form">
+        <div class="dialog-heading">
+          <h2 id="studentDialogTitle">Add Student</h2>
+          <button id="closeStudentDialog" class="icon-button" type="button" aria-label="Close">×</button>
+        </div>
+        <input id="studentId" name="id" type="hidden" />
+        <div class="form-grid">
+          <label>Roll number<input id="studentRollNo" name="roll_no" required minlength="3" maxlength="20" /></label>
+          <label>Name<input id="studentName" name="name" required minlength="2" maxlength="100" /></label>
+          <label>Email<input id="studentEmail" name="email" type="email" required /></label>
+          <label>Phone<input id="studentPhone" name="phone" inputmode="numeric" required /></label>
+          <label>Date of birth<input id="studentDob" name="dob" type="date" required /></label>
+          <label>Gender
+            <select id="studentGender" name="gender" required>
+              <option value="">Select gender</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Course<select id="studentCourse" name="course_id" required></select></label>
+          <label class="full-width">Address<textarea id="studentAddress" name="address" maxlength="255" rows="2"></textarea></label>
+        </div>
+        <fieldset class="photo-field">
+          <legend>Student photo</legend>
+          <div id="photoPreview" class="photo-placeholder preview-placeholder" aria-label="Student initials preview"></div>
+          <label>Choose JPEG, PNG, or WebP (max 2MB)
+            <input id="studentPhoto" name="photo" type="file" accept="image/jpeg,image/png,image/webp" />
+          </label>
+        </fieldset>
+        <div class="dialog-actions">
+          <button id="cancelStudentDialog" class="secondary" type="button">Cancel</button>
+          <button class="primary" type="submit">Save Student</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
